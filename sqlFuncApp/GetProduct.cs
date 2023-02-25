@@ -42,7 +42,12 @@ namespace sqlFuncApp
                 }
             }
             _connection.Close();
-            return new OkObjectResult(_product_List);
+
+            // To use this Function in another Az-Webapp need to add this line
+            return new OkObjectResult(JsonConvert.SerializeObject(_product_List));
+
+            // Normal version
+            //return new OkObjectResult(_product_List);
 
         }
 
